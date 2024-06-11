@@ -25,7 +25,6 @@ o.expandtab = true
 o.cindent = true
 
 -- More clear text formatting
--- More clear text formatting
 o.list = true
 o.listchars = 'space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,leadmultispace:│   ,'
 
@@ -87,6 +86,3 @@ tsconfig.setup({
 
 -- NeoTree (file explorer)
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
-
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
