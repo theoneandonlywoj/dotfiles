@@ -2,12 +2,11 @@
 local g = vim.g
 local o = vim.o
 
-g.mapleader = " "
 -- System Clipboard --
 o.clipboard = 'unnamedplus'
 
 -- Number of screen lines to keep above and below the cursor
-o.scrolloff = 22
+o.scrolloff = 15
 
 -- Better editor UI --
 o.number = true
@@ -24,6 +23,30 @@ o.shiftwidth = 2
 -- Better editing experience --
 o.expandtab = true
 o.cindent = true
+
+-- More clear text formatting
+-- More clear text formatting
+o.list = true
+o.listchars = 'space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,leadmultispace:│   ,'
+
+-- When splitting the windows, put the new tab to the right (vertical split) or below (horizontal split)
+o.splitright = true
+o.splitbelow = true
+
+-- Remember 50 items in commandline history
+o.history = 50
+
+-- Better buffer splitting
+o.splitright = true
+o.splitbelow = true
+
+-- Preserve view while jumping
+o.jumpoptions = 'view'
+
+-- Map <leader> to space
+g.mapleader = ' '
+g.maplocalleader = ' '
+
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
