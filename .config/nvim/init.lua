@@ -1,4 +1,10 @@
 
+-------------------------------------------------
+-- WOJCIECH'S NEOVIM CONFIGURATION
+-- Neovim website: https://neovim.io/
+-- Wojciech's dotfiles: https://github.com/theoneandonlywoj/dotfiles
+-------------------------------------------------
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -16,5 +22,3 @@ local opts = {}
 
 require("vim-options")
 require("lazy").setup("plugins")
-
-
