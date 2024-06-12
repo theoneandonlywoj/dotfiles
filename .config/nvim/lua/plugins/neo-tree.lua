@@ -13,6 +13,7 @@ return {
       })
       -- NeoTree (file explorer)
       vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
+      vim.cmd(':Neotree filesystem reveal left')
     end
   }
 
