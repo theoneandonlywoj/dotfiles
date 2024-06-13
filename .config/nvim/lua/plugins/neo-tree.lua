@@ -9,8 +9,16 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      close_if_last_window = true
-    })
+      close_if_last_window = true,
+      event_handlers = {{
+        event = "neo_tree_buffer_enter",
+        handler = function(arg)
+          vim.cmd [[
+            setlocal relativenumber
+          ]]
+        end,
+      }},
+  })
     -- NeoTree (file explorer)
     vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
     vim.cmd(':Neotree filesystem reveal left')
