@@ -18,6 +18,12 @@ return {
             ]]
         end,
       }},
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false
+        }
+      }
     })
     -- NeoTree (file explorer)
     vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
