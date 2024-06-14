@@ -3,7 +3,7 @@ local g = vim.g
 local o = vim.o
 
 -- System Clipboard --
-o.clipboard = 'unnamedplus'
+o.clipboard = "unnamedplus"
 
 -- Number of screen lines to keep above and below the cursor
 o.scrolloff = 15
@@ -12,7 +12,7 @@ o.scrolloff = 15
 o.number = true
 o.numberwidth = 3
 o.relativenumber = true
-o.signcolumn = 'yes:1'
+o.signcolumn = "yes:1"
 o.cursorline = true
 
 o.expandtab = true
@@ -26,7 +26,7 @@ o.cindent = true
 
 -- More clear text formatting
 o.list = true
-o.listchars = 'space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,leadmultispace:│   ,'
+o.listchars = "space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,leadmultispace:│   ,"
 
 -- When splitting the windows, put the new tab to the right (vertical split) or below (horizontal split)
 o.splitright = true
@@ -40,8 +40,8 @@ o.splitright = true
 o.splitbelow = true
 
 -- Preserve view while jumping
-o.jumpoptions = 'view'
+o.jumpoptions = "view"
 
 -- Map <leader> to space
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
