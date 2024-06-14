@@ -14,6 +14,16 @@ return {
     end
   },
   {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function()
+      require('mason-tool-installer').setup({
+        ensure_installed = {
+          'stylua'
+        }
+      })
+    end
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
