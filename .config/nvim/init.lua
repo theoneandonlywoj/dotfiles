@@ -1,24 +1,2 @@
--------------------------------------------------
--- WOJCIECH'S NEOVIM CONFIGURATION
--- Neovim website: https://neovim.io/
--- Wojciech's dotfiles: https://github.com/theoneandonlywoj/dotfiles
--------------------------------------------------
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
----@diagnostic disable-next-line: unused-local
-local opts = {}
-
-require("vim-options")
-require("lazy").setup("plugins")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
