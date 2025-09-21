@@ -31,6 +31,9 @@ pull-doom-emacs:
 	# Print a message after copying
 	echo "Doom Emacs configs pulled into dotfiles repository."
 
+clear-doom-emacs:
+	rm -rf ~/.config/doom/
+
 install-on-linux:
 	# Install common packages
 	sudo apt-get install -y build-essential curl git wget
