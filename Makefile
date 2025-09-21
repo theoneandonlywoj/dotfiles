@@ -34,6 +34,9 @@ pull-doom-emacs:
 clear-doom-emacs:
 	rm -rf ~/.config/doom/
 
+sync-doom-emacs:
+	doom sync
+
 install-on-linux:
 	# Install common packages
 	sudo apt-get install -y build-essential curl git wget
