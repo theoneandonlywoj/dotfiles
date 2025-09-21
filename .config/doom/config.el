@@ -74,3 +74,46 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;;; config.el --- Doom Emacs user config
+
+;; ----------------------------
+;; Elixir & Phoenix LSP Setup
+;; ----------------------------
+;; Ensure elixir +lsp is enabled in init.el:
+;; :lang
+;; (elixir +lsp)
+
+;; Enable LSP in elixir-mode
+(after! elixir-mode
+  (require 'lsp)
+  (add-hook 'elixir-mode-hook #'lsp)  ;; Start LSP automatically
+  (add-hook 'elixir-mode-hook #'flycheck-mode) ;; Optional: syntax checking
+  ;; Format on save
+  (setq +format-on-save-enabled-modes '(elixir-mode)))
+
+;; Optional: Alchemist integration (extra Phoenix support)
+(use-package! alchemist
+  :hook (elixir-mode . alchemist-mode))
+
+;; Tree-sitter highlighting for Elixir
+(after! tree-sitter
+  (add-hook 'elixir-mode-hook #'tree-sitter-hl-mode))
+
+;; ----------------------------
+;; Optional Keybindings
+;; ----------------------------
+;; Jump to definition with LSP
+(map! :after elixir-mode
+      :map elixir-mode-map
+      "C-c C-d" #'lsp-find-definition
+      "C-c C-r" #'lsp-find-references
+      "C-c C-h" #'lsp-describe-thing-at-point)
+
+;; ----------------------------
+;; Phoenix convenience
+;; ----------------------------
+;; Open Phoenix routes or modules quickly via projectile
+(after! projectile
+  (add-to-list 'projectile-globally-ignored-directories "deps")
+  (add-to-list 'projectile-globally-ignored-directories "_build"))
