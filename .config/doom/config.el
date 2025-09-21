@@ -76,6 +76,10 @@
 ;; they are implemented.
 
 ;;; config.el --- Doom Emacs user config
+;; ----------------------------
+;; Start Emacs in fullscreen
+;; ----------------------------
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 ;; ----------------------------
 ;; Elixir & Phoenix LSP Setup
