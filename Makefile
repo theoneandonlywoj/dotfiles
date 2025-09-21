@@ -15,7 +15,7 @@ push-nvim:
 
 push-doom-emacs:
 	mkdir -p ~/.config/doom
-	mv ~/.config/doom ~/.config/doom-backup-$(date +%Y%m%d-%H%M%S) && echo "Doom Emacs configs backed up."
+	mv ~/.config/doom ~/.config/doom-backup-$$(date +%Y%m%d-%H%M%S) && echo "Doom Emacs configs backed up."
 	cd ~/Desktop/Repos/dotfiles
 	mkdir -p ~/.config/doom
 	cp -r ./.config/doom/* ~/.config/doom/ && echo "Synched Doom Emacs configs."
